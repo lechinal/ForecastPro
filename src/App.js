@@ -4,10 +4,10 @@ import { Route, Routes } from 'react-router-dom';
 import SearchBar from './components/SearchBar/SearchBar';
 import { Loader } from './components/Loader/Loader';
 import Header from './components/Header/Header';
-// import Today from "./pages/Today/Today";
-// import FiveDays from "./pages/FiveDays/FiveDays";
+
 // import Navigation from "./components/Navigation/Navigation";
 // import CityDetails from "./components/CityDetails/CityDetails";
+
 import FavoriteCities from './components/FavoriteCities/FavoriteCities';
 
 const Today = lazy(() => import('./pages/Today/Today'));
