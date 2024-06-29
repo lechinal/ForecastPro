@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 // import { useNavigate } from "react-router-dom";
-import styles from "./FavoriteCities.module.css";
-import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import styles from './FavoriteCities.module.css';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 
 const ITEMS_PER_PAGE = 3;
 
@@ -15,7 +15,7 @@ function FavoriteCities({
 }) {
   const [currentPage, setCurrentPage] = useState(0);
 
-  const handleCityClick = (selectedCity) => {
+  const handleCityClick = selectedCity => {
     setCity(selectedCity);
     onCityClick(selectedCity);
   };
@@ -25,12 +25,12 @@ function FavoriteCities({
     onRemoveCityClick(city);
   };
 
-  const goToPreviousPage = (event) => {
+  const goToPreviousPage = event => {
     event.stopPropagation();
     setCurrentPage(currentPage - 1);
   };
 
-  const goToNextPage = (event) => {
+  const goToNextPage = event => {
     event.stopPropagation();
     setCurrentPage(currentPage + 1);
   };
@@ -45,9 +45,7 @@ function FavoriteCities({
         {visibleCities.map((city, index) => (
           <li key={index} className={styles.city}>
             <span onClick={() => handleCityClick(city)}>{city}</span>
-            <button onClick={(event) => handleRemoveCity(event, city)}>
-              X
-            </button>
+            <button onClick={event => handleRemoveCity(event, city)}>X</button>
           </li>
         ))}
       </ul>
