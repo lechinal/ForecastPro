@@ -1,0 +1,62 @@
+.today {
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+
+  background-image: url("../../images/desktop/firstPage.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  padding-top: 30px;
+}
+.cityDetails {
+  margin: 30px;
+}
+
+.timeAndDate {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.navigation {
+  margin-bottom: 30px;
+}
+.error {
+  color: red;
+  background-color: #ffe5e5;
+  padding: 10px;
+  border: 1px solid red;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  text-align: center;
+
+  border-radius: 30px;
+
+  width: 400px;
+}
+
+.noData {
+  color: #c4beb9;
+  color: #659999;
+  padding: 10px;
+  border: 1px solid #659999;
+  border-radius: 20px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.noData:hover {
+  background-color: #659999;
+  color: #c4beb9;
+  border: 1px solid #c4beb9;
+}
+.quoteBox {
+  margin-top: 30px;
+}

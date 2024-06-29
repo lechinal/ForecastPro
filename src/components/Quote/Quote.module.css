@@ -1,0 +1,58 @@
+.quoteContainer {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.quoteOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* background: rgba(0, 0, 0, 0.5); */
+  background: transparent;
+  z-index: 1;
+}
+
+.iconQuote,
+.quote {
+  position: relative;
+  z-index: 2;
+}
+.iconQuote {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 10px;
+  color: white;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.quote {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.textQuote {
+  width: 300px;
+  color: white;
+  font-style: italic;
+  font-size: 14px;
+  line-height: 16.8px;
+}
+.authorQuote {
+  color: white;
+  font-size: 16px;
+  line-height: 21.6px;
+
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  align-items: flex-end;
+}

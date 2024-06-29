@@ -1,0 +1,78 @@
+.timeAndDateContainer sup {
+  font-size: 0.7em;
+  vertical-align: super;
+}
+
+.details {
+  background-color: #102136;
+
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 400px;
+  height: 100%;
+
+  padding: 30px 50px 40px 50px;
+  border-radius: 30px;
+}
+
+.date {
+  color: white;
+  font-size: 45px;
+  line-height: 54px;
+  text-align: center;
+}
+
+.monthTimeContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
+  font-size: 16px;
+  line-height: 16.8px;
+}
+
+.month {
+  border-right: 1px solid #ce9233;
+  padding-right: 60px;
+}
+
+.time {
+  padding-left: 10px;
+}
+
+.riseSetContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 27px;
+}
+
+.riseSet {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+
+  border-right: 1px solid #ce9233;
+  padding-right: 39px;
+}
+
+.setRise {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+
+  /* border-right: 1px solid #ce9233; */
+  /* padding-right: 60px; */
+}
+.riseSet img,
+.setRise img {
+  width: 20px;
+}

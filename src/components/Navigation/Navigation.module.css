@@ -1,0 +1,40 @@
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  gap: 20px;
+}
+
+/* .navLink {
+  border: 3px solid blue;
+  border-radius: 20px;
+  background-color: #659999;
+
+  width: 126px;
+  height: 28px;
+} */
+
+.links {
+  display: flex;
+}
+
+.navLink a {
+  text-decoration: none;
+  padding: 10px 20px;
+  margin-right: 20px;
+  color: black;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.navLink:hover {
+  color: #ce9233;
+}
+
+.navLink a:global(.active) {
+  background-color: white;
+  border: 2px solid #ce9233;
+  color: #000000; /* sau culoarea dorită pentru textul activ */
+}

@@ -1,0 +1,88 @@
+.favoriteCities {
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.citiesList {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 30px;
+
+  list-style: none;
+}
+
+.city {
+  background-color: rgba(16, 33, 54, 0.5);
+  cursor: pointer;
+  border-radius: 20px;
+  padding: 15px 20px 15px 20px;
+  color: white;
+  text-decoration: underline;
+  display: inline-block;
+}
+
+/* .city:hover {
+  background-color: white;
+  border: 1px solid rgba(16, 33, 54, 0.5);
+  color: black;
+} */
+
+.city span {
+  padding-left: 15px;
+}
+
+.city button {
+  margin-left: 20px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 16px;
+}
+.city button:hover {
+  color: red;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+}
+.navButton {
+  /* background-color: rgba(255, 255, 255, 0.2); */
+  background-color: white;
+  border-radius: 20px;
+  border: 1px solid lightblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: none; */
+  padding: 10px;
+  cursor: pointer;
+
+  width: 100px;
+}
+
+.navButton:hover {
+  background-color: #ce9233;
+  border-color: black;
+}
+
+.navButton:disabled {
+  background-color: #f0f0f0;
+  border-color: #ccc;
+  color: #999;
+  cursor: not-allowed;
+}
+
+/* 
+.disabled {
+  background-color: #f0f0f0;
+  border-color: #ccc;
+  color: #999;
+  cursor: not-allowed;
+} */
