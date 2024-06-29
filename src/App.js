@@ -1,6 +1,6 @@
 import './App.css';
 import React, { Suspense, lazy, useState, useEffect } from 'react';
-import { Route, Routes, Navigate } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import SearchBar from './components/SearchBar/SearchBar';
 import { Loader } from './components/Loader/Loader';
 import Header from './components/Header/Header';
