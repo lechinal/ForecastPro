@@ -1,15 +1,15 @@
-import React, { useState } from "react";
-import styles from "./ForecastEntry.module.css";
-import { dateBuilder } from "../../utils/dateBuilder";
-import ForecastDetails from "../ForecastDetails/ForecastDetails";
-import { kelvinToCelsius } from "../../utils/temperatureConversion.js";
+import React, { useState } from 'react';
+import styles from './ForecastEntry.module.css';
+import { dateBuilder } from '../../utils/dateBuilder';
+import ForecastDetails from '../ForecastDetails/ForecastDetails';
+import { kelvinToCelsius } from '../../utils/temperatureConversion.js';
 
 const ForecastEntry = ({ entry }) => {
   const [showDetails, setShowDetails] = useState(false);
 
   const date = new Date(entry.dt * 1000);
   const { formattedDate, formattedMonth } = dateBuilder(date);
-  const iconUrl = `http://openweathermap.org/img/w/${entry.weather[0].icon}.png`;
+  const iconUrl = `https://openweathermap.org/img/w/${entry.weather[0].icon}.png`;
   const temp = kelvinToCelsius(entry.main.temp);
   const tempMin = kelvinToCelsius(entry.main.temp_min);
   const tempMax = kelvinToCelsius(entry.main.temp_max);
@@ -40,7 +40,7 @@ const ForecastEntry = ({ entry }) => {
       </div>
 
       <button onClick={handleToggleDetails}>
-        {showDetails ? "Hide Details" : "Show Details"}
+        {showDetails ? 'Hide Details' : 'Show Details'}
       </button>
       {showDetails && <ForecastDetails entry={entry} />}
     </div>

@@ -1,17 +1,17 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import styles from "./FiveDays.module.css";
-import Navigation from "../../components/Navigation/Navigation.jsx";
-import { api } from "../../api/api.js";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import styles from './FiveDays.module.css';
+import Navigation from '../../components/Navigation/Navigation.jsx';
+import { api } from '../../api/api.js';
 // import { dateBuilder } from "../../utils/dateBuilder.js";
-import ForecastEntry from "../../components/ForecastEntry/ForecastEntry.jsx"; // Importăm componenta ForecastEntry
-import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import ForecastEntry from '../../components/ForecastEntry/ForecastEntry.jsx'; // Importăm componenta ForecastEntry
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 
 function FiveDays({ city }) {
   const [forecast, setForecast] = useState([]);
   const [cityDetails, setCityDetails] = useState({});
-  const [error, setError] = useState("");
+  const [error, setError] = useState('');
   const [startIndex, setStartIndex] = useState(0);
 
   useEffect(() => {
@@ -19,9 +19,9 @@ function FiveDays({ city }) {
 
     const fetchData = async () => {
       try {
-        const storedCity = localStorage.getItem("city");
-        const storedCityDetails = localStorage.getItem("cityDetails");
-        const storedForecast = localStorage.getItem("forecast");
+        const storedCity = localStorage.getItem('city');
+        const storedCityDetails = localStorage.getItem('cityDetails');
+        const storedForecast = localStorage.getItem('forecast');
 
         if (
           storedCity &&
@@ -31,14 +31,14 @@ function FiveDays({ city }) {
         ) {
           setCityDetails(JSON.parse(storedCityDetails));
           setForecast(JSON.parse(storedForecast));
-          setError("");
+          setError('');
         } else {
           const geoResponse = await axios.get(
             `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${api.key}`
           );
 
           if (geoResponse.data.length === 0) {
-            setError("City not found!");
+            setError('City not found!');
             return;
           }
 
@@ -54,14 +54,14 @@ function FiveDays({ city }) {
           );
 
           setForecast(filteredForecast);
-          setError("");
+          setError('');
 
-          localStorage.setItem("city", city);
+          localStorage.setItem('city', city);
           localStorage.setItem(
-            "cityDetails",
+            'cityDetails',
             JSON.stringify({ city: name, country })
           );
-          localStorage.setItem("forecast", JSON.stringify(filteredForecast));
+          localStorage.setItem('forecast', JSON.stringify(filteredForecast));
         }
       } catch (error) {
         setError(error.message);
@@ -71,11 +71,11 @@ function FiveDays({ city }) {
     fetchData();
   }, [city]);
 
-  const filterForecastByDays = (forecastList) => {
+  const filterForecastByDays = forecastList => {
     const uniqueDays = {};
     const filteredForecast = [];
 
-    forecastList.forEach((entry) => {
+    forecastList.forEach(entry => {
       const date = new Date(entry.dt * 1000);
       const dayKey = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`;
 
@@ -100,8 +100,8 @@ function FiveDays({ city }) {
     }
   };
 
-  console.log("cityDetails:", cityDetails);
-  console.log("forecast:", forecast);
+  console.log('cityDetails:', cityDetails);
+  console.log('forecast:', forecast);
 
   return (
     <div className={styles.fiveDays}>
@@ -118,7 +118,7 @@ function FiveDays({ city }) {
 
       {forecast.length > 0 ? (
         <div className={styles.forecast}>
-          {forecast.slice(startIndex, startIndex + 3).map((entry) => (
+          {forecast.slice(startIndex, startIndex + 3).map(entry => (
             <ForecastEntry key={entry.dt} entry={entry} />
           ))}
 
