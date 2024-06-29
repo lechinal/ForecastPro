@@ -1,6 +1,6 @@
 import './App.css';
 import React, { Suspense, lazy, useState, useEffect } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, Navigate } from 'react-router-dom';
 import SearchBar from './components/SearchBar/SearchBar';
 import { Loader } from './components/Loader/Loader';
 import Header from './components/Header/Header';
@@ -74,7 +74,9 @@ function App() {
       <Suspense fallback={<Loader />}>
         <div className="Pages">
           <Routes>
-            <Route exact path="/" element={<Today city={city} />} />
+            {/* <Route path="/" element={<Navigate to="/today" />} /> */}
+            <Route path="/" element={<Today city={city} />} />
+            {/* <Route path="/today" element={<Today city={city} />} /> */}
             <Route path="/fivedays" element={<FiveDays city={city} />} />
           </Routes>
         </div>
