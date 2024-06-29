@@ -15,7 +15,7 @@ const FiveDays = lazy(() => import('./pages/FiveDays/FiveDays'));
 
 function App() {
   console.log(localStorage);
-  const storedCities = JSON.parse(localStorage.getItem('favoriteCities'));
+  const storedCities = JSON.parse(localStorage.getItem('favoriteCities')) || [];
 
   const [city, setCity] = useState('');
   const [favoriteCities, setFavoriteCities] = useState(storedCities);
