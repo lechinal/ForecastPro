@@ -77,11 +77,18 @@ function FiveDays({ city }) {
 
     forecastList.forEach(entry => {
       const date = new Date(entry.dt * 1000);
-      const dayKey = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`;
+      const today = new Date();
+      // Setez ora de început a zilei curente
+      today.setHours(0, 0, 0, 0);
 
-      if (!uniqueDays[dayKey]) {
-        uniqueDays[dayKey] = true;
-        filteredForecast.push(entry);
+      // Verific dacă data este astazi sau mai tarziu
+      if (date >= today) {
+        const dayKey = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`;
+
+        if (!uniqueDays[dayKey]) {
+          uniqueDays[dayKey] = true;
+          filteredForecast.push(entry);
+        }
       }
     });
 
@@ -117,23 +124,29 @@ function FiveDays({ city }) {
       )}
 
       {forecast.length > 0 ? (
-        <div className={styles.forecast}>
-          {forecast.slice(startIndex, startIndex + 3).map(entry => (
-            <ForecastEntry key={entry.dt} entry={entry} />
-          ))}
-
+        <>
+          <div className={styles.forecast}>
+            {forecast.slice(startIndex, startIndex + 3).map(entry => (
+              <ForecastEntry key={entry.dt} entry={entry} />
+            ))}
+          </div>
           <div className={styles.pagination}>
-            <button onClick={handlePrev} disabled={startIndex === 0}>
+            <button
+              onClick={handlePrev}
+              disabled={startIndex === 0}
+              className={styles.navButton}
+            >
               <ArrowBackIosIcon />
             </button>
             <button
               onClick={handleNext}
               disabled={startIndex + 3 >= forecast.length}
+              className={styles.navButton}
             >
               <ArrowForwardIosIcon />
             </button>
           </div>
-        </div>
+        </>
       ) : (
         <p className={styles.noData}>
           No forecast data available. Please enter a city or select a favorite

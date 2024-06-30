@@ -2,7 +2,7 @@
   width: 100%;
   height: 100vh;
 
-  background-image: url("../../images/desktop/secondPage.png");
+  background-image: url('../../images/desktop/secondPage.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -18,11 +18,47 @@
 
 .forecast {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: center;
   gap: 20px;
   align-items: center;
 
   margin-top: 30px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+
+  margin-top: 30px;
+}
+.navButton {
+  background-color: white;
+  border-radius: 20px;
+  border: 1px solid lightblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  cursor: pointer;
+
+  width: 50px;
+  height: 30px;
+}
+
+.navButton:hover {
+  background-color: #ce9233;
+  border-color: black;
+}
+
+.navButton:disabled {
+  background-color: #f0f0f0;
+  border-color: #ccc;
+  color: #999;
+  cursor: not-allowed;
 }
 
 .noData {
