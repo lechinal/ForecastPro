@@ -64,7 +64,7 @@ function HourlyForecast({ entry }) {
       </div>
 
       {showWindDetails && (
-        <div>
+        <div className={styles.wind}>
           <p>Wind Dir: {degreesToDirection(entry.wind.deg)}</p>
           <p>Wind Gust: {entry.wind.gust} m/s</p>
           <p>Visibility: {entry.visibility / 1000} km</p>
