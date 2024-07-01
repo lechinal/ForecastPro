@@ -74,9 +74,9 @@ function App() {
       <Suspense fallback={<Loader />}>
         <div className="Pages">
           <Routes>
-            {/* <Route path="/" element={<Navigate to="/today" />} /> */}
+           
             <Route path="/" element={<Today city={city} />} />
-            {/* <Route path="/today" element={<Today city={city} />} /> */}
+           
             <Route path="/fivedays" element={<FiveDays city={city} />} />
           </Routes>
         </div>

@@ -8,11 +8,19 @@ import ForecastEntry from '../../components/ForecastEntry/ForecastEntry.jsx'; //
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 
+import HourlyForecast from '../../components/HourlyForecast/HourlyForecast'; // Import
+
 function FiveDays({ city }) {
   const [forecast, setForecast] = useState([]);
   const [cityDetails, setCityDetails] = useState({});
   const [error, setError] = useState('');
   const [startIndex, setStartIndex] = useState(0);
+  // State pentru ziua selectata
+  const [selectedDay, setSelectedDay] = useState(null);
+  const [hourlyForecast, setHourlyForecast] = useState([]);
+  const [showHourlyForecast, setShowHourlyForecast] = useState(false);
+  const [daysPerPage, setDaysPerPage] = useState(3);
+  const [visibleEntries, setVisibleEntries] = useState(8);
 
   useEffect(() => {
     if (!city) return;
@@ -22,15 +30,20 @@ function FiveDays({ city }) {
         const storedCity = localStorage.getItem('city');
         const storedCityDetails = localStorage.getItem('cityDetails');
         const storedForecast = localStorage.getItem('forecast');
+        const storedHourlyForecast = localStorage.getItem('hourlyForecast');
 
         if (
           storedCity &&
           storedCityDetails &&
           storedForecast &&
+          storedHourlyForecast &&
           storedCity === city
         ) {
           setCityDetails(JSON.parse(storedCityDetails));
           setForecast(JSON.parse(storedForecast));
+          setHourlyForecast(JSON.parse(storedHourlyForecast));
+          // setShowHourlyForecast(JSON.parse(storedHourlyForecast));
+          setShowHourlyForecast(!!storedHourlyForecast);
           setError('');
         } else {
           const geoResponse = await axios.get(
@@ -54,6 +67,8 @@ function FiveDays({ city }) {
           );
 
           setForecast(filteredForecast);
+          setHourlyForecast(forecastResponse.data.list);
+
           setError('');
 
           localStorage.setItem('city', city);
@@ -62,6 +77,11 @@ function FiveDays({ city }) {
             JSON.stringify({ city: name, country })
           );
           localStorage.setItem('forecast', JSON.stringify(filteredForecast));
+          localStorage.setItem(
+            'hourlyForecast',
+            JSON.stringify(forecastResponse.data.list)
+          );
+          setShowHourlyForecast(true);
         }
       } catch (error) {
         setError(error.message);
@@ -97,18 +117,71 @@ function FiveDays({ city }) {
 
   const handleNext = () => {
     if (startIndex + 3 < forecast.length) {
-      setStartIndex(startIndex + 3);
+      setStartIndex(startIndex + 1);
     }
   };
 
   const handlePrev = () => {
-    if (startIndex - 3 >= 0) {
-      setStartIndex(startIndex - 3);
+    if (startIndex - 1 >= 0) {
+      setStartIndex(startIndex - 1);
     }
   };
 
-  console.log('cityDetails:', cityDetails);
-  console.log('forecast:', forecast);
+  // Funcția pentru selectarea unei zile în componenta ForecastEntry
+
+  const handleDaySelect = selectedDate => {
+    setSelectedDay(selectedDate);
+    setShowHourlyForecast(true);
+  };
+
+  // Funcția simplificată pentru filtrarea prognozei orare pe baza zilei selectate
+  const filterHourlyForecast = () => {
+    if (!selectedDay) return []; // Dacă nu este selectată nicio zi, returnează un array gol
+
+    const filteredHourly = hourlyForecast.filter(entry => {
+      const entryDate = new Date(entry.dt * 1000);
+      return (
+        entryDate.getFullYear() === selectedDay.getFullYear() &&
+        entryDate.getMonth() === selectedDay.getMonth() &&
+        entryDate.getDate() === selectedDay.getDate()
+      );
+    });
+
+    return filteredHourly;
+  };
+
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth;
+      if (width <= 480) {
+        setDaysPerPage(1);
+        setVisibleEntries(1);
+      } else if (width <= 768) {
+        setDaysPerPage(3);
+        setVisibleEntries(3);
+      } else if (width <= 1024) {
+        setDaysPerPage(5);
+        setVisibleEntries(5);
+      } else if (width <= 1200) {
+        setDaysPerPage(8);
+        setVisibleEntries(8);
+      } else {
+        setDaysPerPage(9);
+        setVisibleEntries(9);
+      }
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  // console.log('cityDetails:', cityDetails);
+  // console.log('forecast:', forecast);
+  // console.log('hourlyForecast:', hourlyForecast);
 
   return (
     <div className={styles.fiveDays}>
@@ -126,8 +199,12 @@ function FiveDays({ city }) {
       {forecast.length > 0 ? (
         <>
           <div className={styles.forecast}>
-            {forecast.slice(startIndex, startIndex + 3).map(entry => (
-              <ForecastEntry key={entry.dt} entry={entry} />
+            {forecast.slice(startIndex, startIndex + daysPerPage).map(entry => (
+              <ForecastEntry
+                key={entry.dt}
+                entry={entry}
+                onSelect={handleDaySelect}
+              />
             ))}
           </div>
           <div className={styles.pagination}>
@@ -146,6 +223,19 @@ function FiveDays({ city }) {
               <ArrowForwardIosIcon />
             </button>
           </div>
+
+          {showHourlyForecast && selectedDay && (
+            <div className={styles.hourlyForecast}>
+              <h3>Hourly Forecast</h3>
+              <div className={styles.hourlyEntries}>
+                {filterHourlyForecast()
+                  .slice(0, visibleEntries)
+                  .map(entry => (
+                    <HourlyForecast key={entry.dt} entry={entry} />
+                  ))}
+              </div>
+            </div>
+          )}
         </>
       ) : (
         <p className={styles.noData}>

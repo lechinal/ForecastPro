@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
-import styles from "./Today.module.css";
-import CityDetails from "../../components/CityDetails/CityDetails.jsx";
-import TimeAndDate from "../../components/TimeAndDate/TimeAndDate.jsx";
-import Navigation from "../../components/Navigation/Navigation.jsx";
-import { api } from "../../api/api.js";
-import Quote from "../../components/Quote/Quote.jsx";
+import styles from './Today.module.css';
+import CityDetails from '../../components/CityDetails/CityDetails.jsx';
+import TimeAndDate from '../../components/TimeAndDate/TimeAndDate.jsx';
+import Navigation from '../../components/Navigation/Navigation.jsx';
+import { api } from '../../api/api.js';
+import Quote from '../../components/Quote/Quote.jsx';
 
 function Today({ city }) {
   const [weather, setWeather] = useState({});
@@ -14,13 +14,13 @@ function Today({ city }) {
   // const [wind, setWind] = useState("");
   // const [humidity, setHumidity] = useState("");
   // const [pressure, setPressure] = useState("");
-  const [tempMax, setTempMax] = useState("");
-  const [tempMin, setTempMin] = useState("");
+  const [tempMax, setTempMax] = useState('');
+  const [tempMin, setTempMin] = useState('');
   // const [visibility, setVisibility] = useState("");
-  const [sunrise, setSunrise] = useState("");
-  const [sunset, setSunset] = useState("");
+  const [sunrise, setSunrise] = useState('');
+  const [sunset, setSunset] = useState('');
 
-  const [error, setError] = useState("");
+  const [error, setError] = useState('');
 
   useEffect(() => {
     const fetchWeather = async () => {
@@ -30,11 +30,11 @@ function Today({ city }) {
         );
         console.log(response.data);
         setWeather(response.data);
-        setError("");
+        setError('');
       } catch (error) {
         // console.log("There was an error fetching the weather data!", error);
         setError(
-          "There was an error fetching the weather data! Please try again."
+          'There was an error fetching the weather data! Please try again.'
         );
       }
     };
@@ -51,8 +51,8 @@ function Today({ city }) {
       // setWind(weather.wind.speed + " m/s");
       // setHumidity(weather.main.humidity + "%");
       // setPressure(weather.main.pressure + " hPa");
-      setTempMax(Math.floor(weather.main.temp_max - 273.15) + " ℃");
-      setTempMin(Math.floor(weather.main.temp_min - 273.15) + " ℃");
+      setTempMax(Math.floor(weather.main.temp_max - 273.15) + ' ℃');
+      setTempMin(Math.floor(weather.main.temp_min - 273.15) + ' ℃');
       // setVisibility(weather.visibility + " m");
 
       const sunriseTime = new Date(

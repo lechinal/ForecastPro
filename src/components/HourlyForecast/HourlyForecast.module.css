@@ -1,0 +1,58 @@
+.hourlyEntry {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  border: 1px solid #ce9233;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 15px;
+  margin: 5px;
+
+  background-color: #102136;
+  border-radius: 30px;
+
+  overflow-y: auto;
+  max-height: 500px;
+  /* width: 200px; */
+}
+
+/* Stilizarea scrollbar-ului pentru WebKit */
+.hourlyEntry::-webkit-scrollbar {
+  /* display: none; */
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 5px;
+  border-radius: 30px;
+}
+
+.hourlyEntry::-webkit-scrollbar-track {
+  border-radius: 30px; /* Unghiurile rotunjite ale track-ului */
+  width: 15px;
+  height: 15px;
+}
+
+.hourlyEntry::-webkit-scrollbar-thumb {
+  background: white; /* Culoarea scrollbar-ului */
+  border-radius: 30px; /* Unghiurile rotunjite ale thumb-ului */
+  width: 15px;
+}
+
+.hourlyEntry::-webkit-scrollbar-thumb:hover {
+  background: #ce9233; /* Culoarea scrollbar-ului la hover */
+}
+
+.hourlyEntry p {
+  margin: 0;
+  font-size: 14px;
+  color: white;
+}
+
+.details {
+  /* border: 1px solid red; */
+}
+
+.detailsWind :hover {
+  cursor: pointer;
+  color: #ce9233;
+}
