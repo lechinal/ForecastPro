@@ -21,6 +21,7 @@ function FiveDays({ city }) {
   const [showHourlyForecast, setShowHourlyForecast] = useState(false);
   const [daysPerPage, setDaysPerPage] = useState(3);
   const [visibleEntries, setVisibleEntries] = useState(8);
+  const [hourlyPage, setHourlyPage] = useState(0);
 
   useEffect(() => {
     if (!city) return;
@@ -127,11 +128,27 @@ function FiveDays({ city }) {
     }
   };
 
+  const handleNextHourly = () => {
+    if (
+      hourlyPage + 1 <
+      Math.ceil(filterHourlyForecast().length / visibleEntries)
+    ) {
+      setHourlyPage(hourlyPage + 1);
+    }
+  };
+
+  const handlePrevHourly = () => {
+    if (hourlyPage - 1 >= 0) {
+      setHourlyPage(hourlyPage - 1);
+    }
+  };
+
   // Funcția pentru selectarea unei zile în componenta ForecastEntry
 
   const handleDaySelect = selectedDate => {
     setSelectedDay(selectedDate);
     setShowHourlyForecast(true);
+    setHourlyPage(0);
   };
 
   // Funcția simplificată pentru filtrarea prognozei orare pe baza zilei selectate
@@ -229,10 +246,33 @@ function FiveDays({ city }) {
               <h3>Hourly Forecast</h3>
               <div className={styles.hourlyEntries}>
                 {filterHourlyForecast()
-                  .slice(0, visibleEntries)
+                  .slice(
+                    hourlyPage * visibleEntries,
+                    (hourlyPage + 1) * visibleEntries
+                  )
                   .map(entry => (
                     <HourlyForecast key={entry.dt} entry={entry} />
                   ))}
+              </div>
+              
+              <div className={styles.hourlyPagination}>
+                <button
+                  onClick={handlePrevHourly}
+                  disabled={hourlyPage === 0}
+                  className={styles.navButton}
+                >
+                  <ArrowBackIosIcon />
+                </button>
+                <button
+                  onClick={handleNextHourly}
+                  disabled={
+                    (hourlyPage + 1) * visibleEntries >=
+                    filterHourlyForecast().length
+                  }
+                  className={styles.navButton}
+                >
+                  <ArrowForwardIosIcon />
+                </button>
               </div>
             </div>
           )}
