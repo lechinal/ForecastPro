@@ -4,7 +4,7 @@ import { dateBuilder } from '../../utils/dateBuilder';
 import ForecastDetails from '../ForecastDetails/ForecastDetails';
 import { kelvinToCelsius } from '../../utils/temperatureConversion.js';
 
-const ForecastEntry = ({ entry }) => {
+const ForecastEntry = ({ entry, onSelect }) => {
   const [showDetails, setShowDetails] = useState(false);
 
   const date = new Date(entry.dt * 1000);
@@ -13,9 +13,14 @@ const ForecastEntry = ({ entry }) => {
   const temp = kelvinToCelsius(entry.main.temp);
   const tempMin = kelvinToCelsius(entry.main.temp_min);
   const tempMax = kelvinToCelsius(entry.main.temp_max);
+  const feelsLike = kelvinToCelsius(entry.main.feels_like);
 
   const handleToggleDetails = () => {
     setShowDetails(!showDetails);
+  };
+
+  const handleDayClick = () => {
+    onSelect(date);
   };
 
   return (
@@ -24,7 +29,7 @@ const ForecastEntry = ({ entry }) => {
       <p>{formattedMonth}</p>
       <img src={iconUrl} alt="weather icon" width="75px" height="75px" />
       <div className={styles.temp}> {temp} ℃</div>
-      <div>Feels like: {kelvinToCelsius(entry.main.feels_like)}℃</div>
+      <div>Feels like: {feelsLike}℃</div>
       <div className={styles.minMaxtemp}>
         <div className={styles.minMax}>
           <p>min:</p>
@@ -42,6 +47,7 @@ const ForecastEntry = ({ entry }) => {
       <button onClick={handleToggleDetails}>
         {showDetails ? 'Hide Details' : 'Show Details'}
       </button>
+      <button onClick={handleDayClick}>3 hour info</button>
       {showDetails && <ForecastDetails entry={entry} />}
     </div>
   );

@@ -1,18 +1,18 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-import styles from "./ForecastDetails.module.css";
+import styles from './ForecastDetails.module.css';
 
 // import { kelvinToCelsius } from "../../utils/temperatureConversion.js";
-import { degreesToDirection } from "../../utils/windDirection.js";
+import { degreesToDirection } from '../../utils/windDirection.js';
 
-import barometru from "../../icons/barometer.svg";
-import humidity from "../../icons/humidity.svg";
-import wind from "../../icons/wind.svg";
+import barometru from '../../icons/barometer.svg';
+import humidity from '../../icons/humidity.svg';
+import wind from '../../icons/wind.svg';
 
-import CompressIcon from "@mui/icons-material/Compress";
+import CompressIcon from '@mui/icons-material/Compress';
 
 function ForecastDetails({ entry }) {
-  const [moreDetails, setMoreDetails] = useState("");
+  const [moreDetails, setMoreDetails] = useState('');
 
   const handleToogleMoreDetails = () => {
     setMoreDetails(!moreDetails);
@@ -23,10 +23,10 @@ function ForecastDetails({ entry }) {
       <div className={styles.weatherDescription}>
         <p>{entry.weather[0].description}</p>
       </div>
-      {entry.rain && entry.rain["3h"] && (
+      {entry.rain && entry.rain['3h'] && (
         <div className={styles.details}>
           <img src={barometru} alt="rain" />
-          <p>{entry.rain["3h"]} mm</p>
+          <p>{entry.rain['3h']} mm</p>
         </div>
       )}
 
@@ -41,12 +41,12 @@ function ForecastDetails({ entry }) {
       </div>
 
       <div className={styles.details}>
-        <CompressIcon sx={{ fill: "white", fillOpacity: 0.4, width: "20px" }} />
+        <CompressIcon sx={{ fill: 'white', fillOpacity: 0.4, width: '20px' }} />
         <p>{entry.main.pressure} hPa</p>
       </div>
 
       <button onClick={handleToogleMoreDetails}>
-        {moreDetails ? "Less Details" : "More Details"}
+        {moreDetails ? 'Less Details' : 'More Details'}
       </button>
       {moreDetails && (
         <div>
