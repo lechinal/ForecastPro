@@ -1,4 +1,4 @@
-import styles from "./CityDetails.module.css";
+import styles from './CityDetails.module.css';
 function CityDetails({
   weather,
 
@@ -29,6 +29,9 @@ function CityDetails({
               <div className={styles.min}>
                 <p className={styles.title}>min</p>
                 <p className={styles.value}>{tempMin}</p>
+              </div>
+              <div className={styles.span}>
+                <span className={styles.line}></span>
               </div>
               <div className={styles.max}>
                 <p className={styles.title}>max</p>
