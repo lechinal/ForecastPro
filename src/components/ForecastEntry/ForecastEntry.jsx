@@ -25,29 +25,40 @@ const ForecastEntry = ({ entry, onSelect }) => {
 
   return (
     <div className={styles.forecastEntry}>
-      <div dangerouslySetInnerHTML={{ __html: formattedDate }}></div>
-      <p>{formattedMonth}</p>
+      <div
+        className={styles.formatedDate}
+        dangerouslySetInnerHTML={{ __html: formattedDate }}
+      ></div>
+      <p className={styles.formatedMonth}> {formattedMonth}</p>
       <img src={iconUrl} alt="weather icon" width="75px" height="75px" />
-      <div className={styles.temp}> {temp} ℃</div>
-      <div>Feels like: {feelsLike}℃</div>
-      <div className={styles.minMaxtemp}>
+      <div className={styles.temp}> {temp}° C</div>
+      <div className={styles.feelsLike}>
+        Feels like: <p className={styles.feelsLikeTemp}>{feelsLike}° C</p>
+      </div>
+
+      <div className={styles.minMaxtempBox}>
         <div className={styles.minMax}>
-          <p>min:</p>
-          <p>{tempMin} ℃</p>
+          <p>min</p>
+          <p className={styles.tempMinMax}>{tempMin}° </p>
         </div>
+
         <div className={styles.span}>
-          <span>|</span>
+          <span className={styles.line}></span>
         </div>
+
         <div className={styles.minMax}>
-          <p>max:</p>
-          <p>{tempMax} ℃</p>
+          <p>max</p>
+          <p className={styles.tempMinMax}>{tempMax}° </p>
         </div>
       </div>
 
-      <button onClick={handleToggleDetails}>
-        {showDetails ? 'Hide Details' : 'Show Details'}
+      <button className={styles.moreInfo} onClick={handleToggleDetails}>
+        {showDetails ? 'less info' : 'more info'}
       </button>
-      <button onClick={handleDayClick}>3 hour info</button>
+
+      <button className={styles.hoursInfo} onClick={handleDayClick}>
+        3 hour info
+      </button>
       {showDetails && <ForecastDetails entry={entry} />}
     </div>
   );

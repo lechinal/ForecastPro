@@ -45,14 +45,22 @@ function ForecastDetails({ entry }) {
         <p>{entry.main.pressure} hPa</p>
       </div>
 
-      <button onClick={handleToogleMoreDetails}>
-        {moreDetails ? 'Less Details' : 'More Details'}
+      <button
+        className={styles.windDetailsButton}
+        onClick={handleToogleMoreDetails}
+      >
+        {moreDetails ? 'less details' : 'more details'}
       </button>
+
       {moreDetails && (
-        <div>
-          <p>Wind Direction: {degreesToDirection(entry.wind.deg)}</p>
-          <p>Wind Gust: {entry.wind.gust} m/s</p>
-          <p>Visibility: {entry.visibility / 1000} km</p>
+        <div className={styles.windDetailsBox}>
+          <p className={styles.direction}>
+            Wind Direction: {degreesToDirection(entry.wind.deg)}
+          </p>
+          <p className={styles.gust}>Wind Gust: {entry.wind.gust} m/s</p>
+          <p className={styles.visibility}>
+            Visibility: {entry.visibility / 1000} km
+          </p>
         </div>
       )}
     </div>

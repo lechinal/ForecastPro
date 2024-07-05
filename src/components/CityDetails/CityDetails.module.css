@@ -18,7 +18,7 @@
 
   padding: 30px 50px 30px 50px;
 
-  background-color: #102136;
+  background: rgba(16, 33, 54, 0.8);
   border-radius: 30px;
 }
 
@@ -56,15 +56,21 @@
   gap: 10px;
 }
 
-.min {
-  border-right: 1px solid #27384a;
-  border-right: 1px solid #ce9233;
-  padding-right: 20px;
-}
-
 .title {
   color: #767d85;
 }
 .value {
   color: white;
+}
+
+.span {
+  color: #27384a;
+  display: flex;
+  align-items: center;
+}
+
+.line {
+  background-color: #ce9233;
+  width: 1px;
+  height: 40px;
 }

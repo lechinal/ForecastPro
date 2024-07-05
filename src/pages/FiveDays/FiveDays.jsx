@@ -153,7 +153,8 @@ function FiveDays({ city }) {
 
   // Funcția simplificată pentru filtrarea prognozei orare pe baza zilei selectate
   const filterHourlyForecast = () => {
-    if (!selectedDay) return []; // Dacă nu este selectată nicio zi, returnează un array gol
+    if (!selectedDay) return []; 
+    // Dacă nu este selectată nicio zi, returnează un array gol
 
     const filteredHourly = hourlyForecast.filter(entry => {
       const entryDate = new Date(entry.dt * 1000);
