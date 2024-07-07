@@ -2,10 +2,19 @@
   width: 100%;
   height: 100vh;
 
-  background-image: url('../../images/desktop/secondPage.png');
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 70%,
+      rgba(0, 0, 0, 0.7) 100%
+    ),
+    url('../../images/desktop/secondPage.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+
+  padding-bottom: 20px;
+
+  overflow-y: auto;
 }
 
 .navigation {
@@ -79,11 +88,12 @@
 }
 
 .hourlyForecast {
-  /* background-color: #102136; */
   background: rgba(16, 33, 54, 0.8);
   border-radius: 30px;
-  border: 1px solid #ce9233;
   margin: 20px;
+
+  overflow-y: auto;
+  max-height: 50vh;
 }
 
 .hourlyForecast h3 {
@@ -108,4 +118,22 @@
 
   margin-top: 30px;
   padding-bottom: 30px;
+}
+
+/* Stilizare scrollbar */
+
+.hourlyForecast::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 15px;
+}
+
+.hourlyForecast::-webkit-scrollbar-track {
+  background: #1a2b3c;
+  border-radius: 15px;
+}
+
+.hourlyForecast::-webkit-scrollbar-thumb {
+  background-color: #ff6b09;
+  border-radius: 15px;
+  border: 3px solid;
 }
