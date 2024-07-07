@@ -13,7 +13,7 @@ function HourlyForecast({ entry }) {
   const [showWindDetails, setShowWindDetails] = useState(false);
 
   const date = new Date(entry.dt * 1000);
-  const { formattedDate, formattedMonth, formattedYear } = dateBuilder(date);
+  const { formattedDate } = dateBuilder(date);
   const hours = date.getHours();
   const temperature = Math.round(entry.main.temp - 273.15);
   const feelsLike = kelvinToCelsius(entry.main.feels_like);
@@ -29,17 +29,31 @@ function HourlyForecast({ entry }) {
 
   return (
     <div className={styles.hourlyEntry}>
-      <p
-        dangerouslySetInnerHTML={{
-          __html: `${formattedDate} ${formattedMonth} ${formattedYear}`,
-        }}
-      />
+      <div className={styles.date}>
+        <p
+          dangerouslySetInnerHTML={{
+            __html: `${formattedDate}  `,
+          }}
+        />
+      </div>
 
-      <p>{`${hours}:00`}</p>
-      <p>{`${temperature}°C`}</p>
-      <p>{description}</p>
+      <div className={styles.hour}>
+        <p>{`${hours}:00`}</p>
+      </div>
+
+      <div className={styles.temp}>
+        <p>{`${temperature}°C`}</p>
+      </div>
+
+      <div className={styles.description}>
+        <p>{description}</p>
+      </div>
+
       <img src={iconUrl} alt="weather icon" width="35px" height="35px" />
-      <p>Feels like: {feelsLike}℃</p>
+      <div className={styles.feels}>
+        Feels like:
+        <p>{feelsLike}℃</p>
+      </div>
 
       <div className={styles.details}>
         <CompressIcon sx={{ fill: 'white', fillOpacity: 0.4, width: '20px' }} />
@@ -65,9 +79,19 @@ function HourlyForecast({ entry }) {
 
       {showWindDetails && (
         <div className={styles.wind}>
-          <p>Wind Dir: {degreesToDirection(entry.wind.deg)}</p>
-          <p>Wind Gust: {entry.wind.gust} m/s</p>
-          <p>Visibility: {entry.visibility / 1000} km</p>
+          <div className={styles.windDetails}>
+            Wind Dir:
+            <p>{degreesToDirection(entry.wind.deg)}</p>
+          </div>
+
+          <div className={styles.windDetails}>
+            Wind Gust:
+            <p>{entry.wind.gust} m/s</p>
+          </div>
+          <div className={styles.windDetails}>
+            Visibility:
+            <p>{entry.visibility / 1000} km</p>
+          </div>
         </div>
       )}
     </div>
