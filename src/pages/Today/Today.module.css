@@ -20,6 +20,23 @@
 
   padding-top: 30px;
 }
+
+.today::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 15px;
+}
+
+.today::-webkit-scrollbar-track {
+  background: #1a2b3c;
+  border-radius: 15px;
+}
+
+.today::-webkit-scrollbar-thumb {
+  background-color: #ff6b09;
+  border-radius: 15px;
+  border: 3px solid;
+}
+
 .cityDetails {
   margin: 30px;
 }

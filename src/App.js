@@ -50,17 +50,17 @@ function App() {
 
   return (
     <div className="App">
-      <div className="Header">
+      <section>
         <Header />
         <SearchBar
           setCity={setCity}
           addToFavorites={addToFavorites}
           favoriteCities={favoriteCities}
         />
-      </div>
+      </section>
 
       {favoriteCities.length > 0 && (
-        <div className="Favorites">
+        <div>
           <FavoriteCities
             cities={favoriteCities}
             onCityClick={handleCityClick}
@@ -72,11 +72,10 @@ function App() {
       )}
 
       <Suspense fallback={<Loader />}>
-        <div className="Pages">
+        <div>
           <Routes>
-           
             <Route path="/" element={<Today city={city} />} />
-           
+
             <Route path="/fivedays" element={<FiveDays city={city} />} />
           </Routes>
         </div>
