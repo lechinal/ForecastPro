@@ -34,37 +34,38 @@ function TimeAndDate({ sunrise, sunset, weather }) {
           className={styles.date}
           dangerouslySetInnerHTML={{ __html: formattedDate }}
         ></div>
+        <div className={styles.widthBox}>
+          <div className={styles.monthTimeContainer}>
+            <div className={styles.box}>
+              <WiAlien size={20} color="#767d85" />
+              <p className={styles.month}>
+                {formattedMonth} {formattedYear}
+              </p>
+            </div>
 
-        <div className={styles.monthTimeContainer}>
-          <div className={styles.box}>
-            <WiAlien size={20} color="#767d85" />
-            <p className={styles.month}>
-              {formattedMonth} {formattedYear}
-            </p>
+            <div className={styles.span}>
+              <span className={styles.line}></span>
+            </div>
+
+            <div className={styles.box}>
+              <WiTime2 size={20} color="#FF6B09" />
+              <p className={styles.time}>{formattedTime}</p>
+            </div>
           </div>
 
-          <div className={styles.span}>
-            <span className={styles.line}></span>
-          </div>
+          <div className={styles.riseSetContainer}>
+            <div className={styles.box}>
+              <img src={sunriseSVG} alt={sunrise} className={styles.riseSet} />
+              <p>{formattedSunrise}</p>
+            </div>
 
-          <div className={styles.box}>
-            <WiTime2 size={20} color="#FF6B09" />
-            <p className={styles.time}>{formattedTime}</p>
-          </div>
-        </div>
-
-        <div className={styles.riseSetContainer}>
-          <div className={styles.box}>
-            <img src={sunriseSVG} alt={sunrise} className={styles.riseSet} />
-            <p>{formattedSunrise}</p>
-          </div>
-
-          <div className={styles.span}>
-            <span className={styles.line}></span>
-          </div>
-          <div className={styles.box}>
-            <img src={sunsetSVG} alt={sunset} className={styles.riseSet} />
-            <p>{formattedSunset}</p>
+            <div className={styles.span}>
+              <span className={styles.line}></span>
+            </div>
+            <div className={styles.box}>
+              <img src={sunsetSVG} alt={sunset} className={styles.riseSet} />
+              <p>{formattedSunset}</p>
+            </div>
           </div>
         </div>
       </div>

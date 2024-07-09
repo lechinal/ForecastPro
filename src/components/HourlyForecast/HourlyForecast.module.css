@@ -27,6 +27,10 @@
   color: #ce9233;
 }
 
+.temp p {
+  color: #767d85;
+}
+
 .details {
   display: flex;
   flex-direction: column;

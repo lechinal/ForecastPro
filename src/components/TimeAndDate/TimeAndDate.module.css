@@ -14,6 +14,9 @@
   flex-direction: column;
   align-items: center;
   gap: 25px;
+
+  width: 100%;
+  height: 100%;
 }
 
 .date {
@@ -39,14 +42,88 @@
   gap: 10px;
 }
 
-/* .span {
-  color: #ce9233;
-  display: flex;
-  align-items: center;
+@media (min-width: 320px) and (max-width: 480px) {
+  .details {
+    width: 300px;
+  }
 }
 
-.line {
-  background-color: #ce9233;
-  width: 1px;
-  height: 20px;
-} */
+@media (min-width: 481px) and (max-width: 768px) {
+  .details {
+    width: 400px;
+  }
+  .widthBox {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .date {
+    font-size: 60px;
+    line-height: 108px;
+    font-weight: 300;
+  }
+  .month,
+  .time,
+  .box {
+    font-size: var(--fontSize18);
+    line-height: 21.6px;
+    font-weight: var(--fontWeight400);
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .details {
+    width: 600px;
+  }
+  .widthBox {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+  .date {
+    font-size: 90px;
+    line-height: 108px;
+    font-weight: 300;
+  }
+  .month,
+  .time,
+  .box {
+    font-size: var(--fontSize20);
+    line-height: 21.8px;
+    font-weight: var(--fontWeight400);
+  }
+}
+
+@media (min-width: 1025px) {
+  .timeAndDateContainer {
+    width: 710px;
+
+    margin-left: 0;
+    margin-right: auto;
+
+    position: relative;
+  }
+  .details {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+  .widthBox {
+    display: flex;
+    flex-direction: row;
+
+    gap: 100px;
+  }
+  .date {
+    font-size: 90px;
+    line-height: 108px;
+    font-weight: 300;
+  }
+  .month,
+  .time,
+  .box {
+    font-size: var(--fontSize22);
+    line-height: 22px;
+    font-weight: var(--fontWeight400);
+  }
+}

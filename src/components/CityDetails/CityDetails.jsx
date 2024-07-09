@@ -23,7 +23,7 @@ function CityDetails({
 
           <div className={styles.temperature}>
             <p className={styles.dailyTemp}>
-              {weather.main && Math.floor(weather.main.temp - 273.15)}°C
+              {weather.main && Math.floor(weather.main.temp - 273.15)} °C
             </p>
             <div className={styles.minmax}>
               <div className={styles.min}>
@@ -46,3 +46,4 @@ function CityDetails({
 }
 
 export default CityDetails;
+

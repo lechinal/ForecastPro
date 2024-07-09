@@ -1,33 +1,42 @@
 .favoriteCities {
-  margin-bottom: 30px;
+  margin: 20px;
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
+
 .citiesList {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  gap: 30px;
+  gap: 10px;
 
   list-style: none;
+
+  font-size: var(--fontSize12);
 }
 
 .city {
   background-color: rgba(16, 33, 54, 0.5);
-  cursor: pointer;
-  border-radius: 20px;
-  padding: 15px 20px 15px 20px;
   color: white;
+  cursor: pointer;
+
+  border-radius: 20px;
+  padding: 5px 10px 5px 10px;
+
   text-decoration: underline;
-  display: inline-block;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 45px;
 }
 
-/* .city:hover {
+.city:hover {
   background-color: white;
   border: 1px solid rgba(16, 33, 54, 0.5);
   color: black;
-} */
+}
 
 .city span {
   padding-left: 15px;
@@ -39,10 +48,10 @@
   background-color: transparent;
   border: none;
   color: white;
-  font-size: 16px;
+  font-size: var(--fontSize10);
 }
-.city button:hover {
-  color: red;
+.city:hover button {
+  color: #ce9233;
 }
 
 .pagination {
@@ -53,18 +62,20 @@
   gap: 20px;
 }
 .navButton {
-  /* background-color: rgba(255, 255, 255, 0.2); */
   background-color: white;
+  background: rgba(255, 255, 255, 0.2);
+
   border-radius: 20px;
   border: 1px solid lightblue;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  /* border: none; */
-  padding: 10px;
+  padding: 15px 10px 15px 10px;
   cursor: pointer;
 
-  width: 100px;
+  width: 50px;
+  height: 30px;
 }
 
 .navButton:hover {
@@ -86,3 +97,9 @@
   color: #999;
   cursor: not-allowed;
 } */
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .citiesList {
+    font-size: var(--fontSize14);
+  }
+}

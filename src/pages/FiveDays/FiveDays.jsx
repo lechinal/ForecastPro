@@ -153,7 +153,7 @@ function FiveDays({ city }) {
 
   // Funcția simplificată pentru filtrarea prognozei orare pe baza zilei selectate
   const filterHourlyForecast = () => {
-    if (!selectedDay) return []; 
+    if (!selectedDay) return [];
     // Dacă nu este selectată nicio zi, returnează un array gol
 
     const filteredHourly = hourlyForecast.filter(entry => {
@@ -255,7 +255,7 @@ function FiveDays({ city }) {
                     <HourlyForecast key={entry.dt} entry={entry} />
                   ))}
               </div>
-              
+
               <div className={styles.hourlyPagination}>
                 <button
                   onClick={handlePrevHourly}

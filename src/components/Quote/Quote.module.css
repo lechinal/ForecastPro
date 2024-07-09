@@ -40,11 +40,12 @@
   gap: 20px;
 }
 .textQuote {
-  width: 300px;
+  width: 100%;
   color: white;
   font-style: italic;
   font-size: 14px;
   line-height: 16.8px;
+  font-style: italic;
 }
 .authorQuote {
   color: white;
@@ -55,4 +56,50 @@
   flex-direction: column;
   text-align: right;
   align-items: flex-end;
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .textQuote {
+    font-size: var(--fontSize22);
+    line-height: 26.4px;
+    font-weight: var(--fontWeight400);
+    text-align: right;
+    font-style: italic;
+  }
+  .authorQuote {
+    font-size: var(--fontSize18px);
+    line-height: 21.6px;
+    font-weight: var(--fontWeight400);
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .quote {
+    /* justify-content: flex-end;
+    align-items: flex-end; */
+    margin-left: auto;
+    margin-right: 0;
+  }
+  .textQuote {
+    font-size: var(--fontSize24);
+    line-height: 26.4px;
+    font-weight: var(--fontWeight400);
+    text-align: right;
+    font-style: italic;
+  }
+  .authorQuote {
+    font-size: var(--fontSize20);
+    line-height: 21.6px;
+    font-weight: var(--fontWeight400);
+  }
+}
+@media (min-width: 1025px) {
+  .quote {
+    width: 350px;
+  }
+  .textQuote {
+    font-weight: var(--fontWeight700);
+  }
+  .authorQuote {
+    font-weight: var(--fontWeight700);
+  }
 }
