@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.css": "/ForecastPro/static/css/main.942834a3.css",
-    "main.js": "/ForecastPro/static/js/main.6e2ac5f8.js",
+    "main.css": "/ForecastPro/static/css/main.fb269771.css",
+    "main.js": "/ForecastPro/static/js/main.12c7581d.js",
     "static/css/56.bdc585d1.chunk.css": "/ForecastPro/static/css/56.bdc585d1.chunk.css",
     "static/js/56.68672653.chunk.js": "/ForecastPro/static/js/56.68672653.chunk.js",
-    "static/css/640.267edbad.chunk.css": "/ForecastPro/static/css/640.267edbad.chunk.css",
-    "static/js/640.b184e92a.chunk.js": "/ForecastPro/static/js/640.b184e92a.chunk.js",
+    "static/css/640.97bc0404.chunk.css": "/ForecastPro/static/css/640.97bc0404.chunk.css",
+    "static/js/640.69d735b5.chunk.js": "/ForecastPro/static/js/640.69d735b5.chunk.js",
     "static/js/213.8591e2f2.chunk.js": "/ForecastPro/static/js/213.8591e2f2.chunk.js",
     "static/js/323.d435c230.chunk.js": "/ForecastPro/static/js/323.d435c230.chunk.js",
     "static/media/firstPage.png": "/ForecastPro/static/media/firstPage.491c78eed87bf4dcead2.png",
@@ -16,17 +16,17 @@
     "static/media/humidity.svg": "/ForecastPro/static/media/humidity.9ec22921d6c9f17b14631809a0dd6a15.svg",
     "static/media/wind.svg": "/ForecastPro/static/media/wind.c853b67fe91a88bef749043941fcbf02.svg",
     "index.html": "/ForecastPro/index.html",
-    "main.942834a3.css.map": "/ForecastPro/static/css/main.942834a3.css.map",
-    "main.6e2ac5f8.js.map": "/ForecastPro/static/js/main.6e2ac5f8.js.map",
+    "main.fb269771.css.map": "/ForecastPro/static/css/main.fb269771.css.map",
+    "main.12c7581d.js.map": "/ForecastPro/static/js/main.12c7581d.js.map",
     "56.bdc585d1.chunk.css.map": "/ForecastPro/static/css/56.bdc585d1.chunk.css.map",
     "56.68672653.chunk.js.map": "/ForecastPro/static/js/56.68672653.chunk.js.map",
-    "640.267edbad.chunk.css.map": "/ForecastPro/static/css/640.267edbad.chunk.css.map",
-    "640.b184e92a.chunk.js.map": "/ForecastPro/static/js/640.b184e92a.chunk.js.map",
+    "640.97bc0404.chunk.css.map": "/ForecastPro/static/css/640.97bc0404.chunk.css.map",
+    "640.69d735b5.chunk.js.map": "/ForecastPro/static/js/640.69d735b5.chunk.js.map",
     "213.8591e2f2.chunk.js.map": "/ForecastPro/static/js/213.8591e2f2.chunk.js.map",
     "323.d435c230.chunk.js.map": "/ForecastPro/static/js/323.d435c230.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.942834a3.css",
-    "static/js/main.6e2ac5f8.js"
+    "static/css/main.fb269771.css",
+    "static/js/main.12c7581d.js"
   ]
 }
