@@ -80,17 +80,17 @@ function HourlyForecast({ entry }) {
       {showWindDetails && (
         <div className={styles.wind}>
           <div className={styles.windDetails}>
-            Wind Dir:
-            <p>{degreesToDirection(entry.wind.deg)}</p>
+            <p>Wind Dir:</p>
+            <strong>{degreesToDirection(entry.wind.deg)}</strong>
           </div>
 
           <div className={styles.windDetails}>
-            Wind Gust:
-            <p>{entry.wind.gust} m/s</p>
+            <p>Wind Gust:</p>
+            <strong>{entry.wind.gust} m/s</strong>
           </div>
           <div className={styles.windDetails}>
-            Visibility:
-            <p>{entry.visibility / 1000} km</p>
+            <p>Visibility:</p>
+            <strong>{entry.visibility / 1000} km</strong>
           </div>
         </div>
       )}

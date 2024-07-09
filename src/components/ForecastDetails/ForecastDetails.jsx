@@ -55,11 +55,16 @@ function ForecastDetails({ entry }) {
       {moreDetails && (
         <div className={styles.windDetailsBox}>
           <p className={styles.direction}>
-            Wind Direction: {degreesToDirection(entry.wind.deg)}
+            Wind Direction:{' '}
+            <strong>{degreesToDirection(entry.wind.deg)}</strong>
           </p>
-          <p className={styles.gust}>Wind Gust: {entry.wind.gust} m/s</p>
+          <p className={styles.gust}>
+            Wind Gust:
+            <strong> {entry.wind.gust} m/s</strong>
+          </p>
           <p className={styles.visibility}>
-            Visibility: {entry.visibility / 1000} km
+            Visibility:
+            <strong> {entry.visibility / 1000} km</strong>
           </p>
         </div>
       )}

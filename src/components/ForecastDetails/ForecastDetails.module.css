@@ -7,11 +7,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
 }
 
 .weatherDescription p {
   color: #767d85;
+  font-size: var(--fontSize16);
 }
 .details {
   display: flex;
@@ -21,7 +22,7 @@
 }
 
 .details p {
-  font-size: 14px;
+  font-size: var(--fontSize16);
   color: #767d85;
 }
 .details img {
@@ -34,6 +35,8 @@
   color: #767d85;
   border-bottom: 1px solid #767d85;
   margin: 5px;
+
+  font-size: var(--fontSize14);
 }
 
 .windDetailsButton:hover {
@@ -48,5 +51,9 @@
   justify-content: center;
   align-items: center;
   gap: 10px;
-  font-size: 12px;
+  font-size: var(--fontSize14);
+}
+.windDetailsBox strong {
+  display: block;
+  margin-top: 5px;
 }

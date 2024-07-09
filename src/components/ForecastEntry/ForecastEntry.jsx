@@ -26,10 +26,10 @@ const ForecastEntry = ({ entry, onSelect }) => {
   return (
     <div className={styles.forecastEntry}>
       <div
-        className={styles.formatedDate}
+        className={styles.formattedDate}
         dangerouslySetInnerHTML={{ __html: formattedDate }}
       ></div>
-      <p className={styles.formatedMonth}> {formattedMonth}</p>
+      <p className={styles.formattedMonth}> {formattedMonth}</p>
       <img src={iconUrl} alt="weather icon" width="75px" height="75px" />
       <div className={styles.temp}> {temp} °C</div>
       <div className={styles.feelsLike}>
