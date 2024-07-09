@@ -31,9 +31,9 @@ const ForecastEntry = ({ entry, onSelect }) => {
       ></div>
       <p className={styles.formatedMonth}> {formattedMonth}</p>
       <img src={iconUrl} alt="weather icon" width="75px" height="75px" />
-      <div className={styles.temp}> {temp}° C</div>
+      <div className={styles.temp}> {temp} °C</div>
       <div className={styles.feelsLike}>
-        Feels like: <p className={styles.feelsLikeTemp}>{feelsLike}° C</p>
+        Feels like: <p className={styles.feelsLikeTemp}>{feelsLike} °C</p>
       </div>
 
       <div className={styles.minMaxtempBox}>

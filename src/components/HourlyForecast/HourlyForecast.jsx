@@ -42,7 +42,7 @@ function HourlyForecast({ entry }) {
       </div>
 
       <div className={styles.temp}>
-        <p>{`${temperature}°C`}</p>
+        <p>{`${temperature} °C`}</p>
       </div>
 
       <div className={styles.description}>
@@ -52,7 +52,7 @@ function HourlyForecast({ entry }) {
       <img src={iconUrl} alt="weather icon" width="35px" height="35px" />
       <div className={styles.feels}>
         Feels like:
-        <p>{feelsLike}℃</p>
+        <p>{feelsLike} °C</p>
       </div>
 
       <div className={styles.details}>

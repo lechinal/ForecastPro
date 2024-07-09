@@ -40,12 +40,16 @@ function FavoriteCities({
 
   return (
     <div className={styles.favoriteCities}>
-      <h2>Favorite Cities</h2>
+      {/* <h2>Favorite Cities</h2> */}
       <ul className={styles.citiesList}>
         {visibleCities.map((city, index) => (
           <li key={index} className={styles.city}>
             <span onClick={() => handleCityClick(city)}>{city}</span>
-            <button onClick={event => handleRemoveCity(event, city)}>X</button>
+            <div>
+              <button onClick={event => handleRemoveCity(event, city)}>
+                <div className={styles.buttonContent}>X</div>
+              </button>
+            </div>
           </li>
         ))}
       </ul>
@@ -56,14 +60,18 @@ function FavoriteCities({
           disabled={currentPage === 0}
           className={styles.navButton}
         >
-          <ArrowBackIosIcon />
+          <div className={styles.iconContainer}>
+            <ArrowBackIosIcon />
+          </div>
         </button>
         <button
           onClick={goToNextPage}
           disabled={startIndex + ITEMS_PER_PAGE >= cities.length}
           className={styles.navButton}
         >
-          <ArrowForwardIosIcon />
+          <div className={styles.iconContainer}>
+            <ArrowForwardIosIcon />
+          </div>
         </button>
       </div>
     </div>

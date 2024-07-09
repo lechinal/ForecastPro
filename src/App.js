@@ -1,6 +1,6 @@
-import './App.css';
 import React, { Suspense, lazy, useState, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
+import styles from './App.module.css';
 import SearchBar from './components/SearchBar/SearchBar';
 import { Loader } from './components/Loader/Loader';
 import Header from './components/Header/Header';
@@ -49,18 +49,18 @@ function App() {
   }, [favoriteCities]);
 
   return (
-    <div className="App">
-      <section>
+    <div className={styles.app}>
+      <header>
         <Header />
         <SearchBar
           setCity={setCity}
           addToFavorites={addToFavorites}
           favoriteCities={favoriteCities}
         />
-      </section>
+      </header>
 
       {favoriteCities.length > 0 && (
-        <div>
+        <section className={styles.favCities}>
           <FavoriteCities
             cities={favoriteCities}
             onCityClick={handleCityClick}
@@ -68,7 +68,7 @@ function App() {
             addToFavorites={addToFavorites}
             setCity={setCity}
           />
-        </div>
+        </section>
       )}
 
       <Suspense fallback={<Loader />}>
