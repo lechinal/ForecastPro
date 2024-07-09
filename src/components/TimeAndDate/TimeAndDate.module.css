@@ -52,6 +52,11 @@
   .details {
     width: 400px;
   }
+  .widthBox {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
   .date {
     font-size: 60px;
     line-height: 108px;
