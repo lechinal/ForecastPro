@@ -175,17 +175,17 @@ function FiveDays({ city }) {
         setDaysPerPage(1);
         setVisibleEntries(1);
       } else if (width <= 768) {
-        setDaysPerPage(3);
+        setDaysPerPage(2);
         setVisibleEntries(3);
       } else if (width <= 1024) {
-        setDaysPerPage(5);
-        setVisibleEntries(5);
+        setDaysPerPage(3);
+        setVisibleEntries(4);
       } else if (width <= 1200) {
-        setDaysPerPage(8);
-        setVisibleEntries(8);
+        setDaysPerPage(4);
+        setVisibleEntries(6);
       } else {
-        setDaysPerPage(9);
-        setVisibleEntries(9);
+        setDaysPerPage(5);
+        setVisibleEntries(7);
       }
     };
 

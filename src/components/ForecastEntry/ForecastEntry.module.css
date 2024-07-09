@@ -1,7 +1,8 @@
 .forecastEntry {
   width: 300px;
   height: 100%;
-  padding: 30px 50px 30px 50px;
+  padding: 35px 50px 35px 50px;
+  margin: 20px;
   background: rgba(16, 33, 54, 0.8);
   border-radius: 30px;
 
@@ -11,26 +12,43 @@
   flex-direction: column;
   align-items: center;
   gap: 10px;
-}
-/* .formatedDate {
-  color: #767d85;
-} */
 
-.formatedMonth {
-  color: #fff;
+  /* flex-shrink: 0; */
+}
+.formattedDate {
+  font-size: var(--fontSize26);
+  line-height: 20px;
+  font-weight: var(fontWeight400);
+
+  /* overflow: hidden;
+  max-width: 200px; */
+  white-space: nowrap;
+}
+
+.formattedMonth {
+  font-size: var(--fontSize28);
+  /* line-height: 20px; */
+  color: #767d85;
 }
 
 .temp {
   color: #fff;
+  font-size: var(--fontSize28);
+  /* line-height: 16.8px; */
 }
 .feelsLike {
   color: #767d85;
   display: flex;
   flex-direction: column;
   gap: 10px;
+
+  font-size: var(--fontSize20);
+  /* line-height: 20px; */
 }
 .feelsLikeTemp {
   color: #fff;
+  font-size: var(--fontSize20);
+  /* line-height: 20px; */
 }
 .minMaxtempBox {
   display: flex;
@@ -38,6 +56,10 @@
   gap: 15px;
 
   color: #767d85;
+}
+
+.minMaxtempBox p {
+  font-size: var(--fontSize20);
 }
 
 .minMax {
@@ -62,13 +84,22 @@
   height: 40px;
 }
 
+.minMaxtempBox {
+  font-size: var(--fontSize20);
+  /* line-height: 20px; */
+}
+
 .moreInfo,
 .hoursInfo {
   background: none;
   border: none;
-  color: #fff;
+  color: #767d85;
   border-bottom: 1px solid #fff;
   margin: 5px;
+
+  font-size: var(--fontSize20);
+  line-height: 20px;
+  font-weight: var(fontWeight400);
 }
 
 .moreInfo:hover,

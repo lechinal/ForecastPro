@@ -61,12 +61,13 @@ button {
   --fontSize19: 19px;
   --fontSize20: 20px;
   --fontSize22: 22px;
-  --fontSize24: 24px
-  --fontSize26: 26px
+  --fontSize24: 24px;
+  --fontSize26: 26px;
   --fontSize28: 28px;
   --fontSize30: 30px;
   --fontSize40: 40px;
   --fontSize50: 50px;
+  --fontSize60: 60px;
   --fontSize70: 70px;
 
   /** Border Radius */

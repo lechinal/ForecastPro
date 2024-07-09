@@ -19,11 +19,22 @@
 
 .navigation {
   padding-top: 40px;
+  padding-bottom: 40px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .title {
   margin-top: 40px;
+  padding-bottom: 20px;
   color: #fff;
+}
+
+.title h2 {
+  font-size: var(--fontSize18);
+  line-height: 21.6px;
 }
 
 .forecast {
@@ -140,4 +151,32 @@
   background-color: #ff6b09;
   border-radius: 15px;
   border: 3px solid;
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .navigation {
+    padding-top: 150px;
+  }
+  .title h2 {
+    font-size: var(--fontSize30);
+    line-height: 33.6px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .title h2 {
+    font-size: var(--fontSize40);
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1200px) {
+  .title h2 {
+    font-size: var(--fontSize50);
+  }
+}
+
+@media (min-width: 1201px) {
+  .title h2 {
+    font-size: var(--fontSize60);
+  }
 }
