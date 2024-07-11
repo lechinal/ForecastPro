@@ -113,7 +113,7 @@
   }
   .quoteContainer {
     background: rgba(0, 0, 0, 0.3);
-    border-radius: 15px;
+    border-radius: 30px;
     border: 1px solid rgba(255, 255, 255, 0.3);
 
     background: linear-gradient(
@@ -125,5 +125,14 @@
     /* Blur subtil pe fundal */
     /* backdrop-filter: blur(10px); 
   background: rgba(0, 0, 0, 0.2); */
+  }
+
+  .quoteContainer:hover .textQuote {
+    color: rgba(39, 56, 74, 1);
+  }
+
+  .quoteContainer:hover .authorQuote {
+    color: rgba(39, 56, 74, 1);
+    color: #ce9233;
   }
 }
