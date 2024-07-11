@@ -135,4 +135,8 @@
     color: rgba(39, 56, 74, 1);
     color: #ce9233;
   }
+
+  .quoteContainer:hover .iconQuote {
+    color: rgba(39, 56, 74, 1);
+  }
 }
