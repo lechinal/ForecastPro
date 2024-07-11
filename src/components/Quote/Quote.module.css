@@ -97,9 +97,33 @@
     width: 350px;
   }
   .textQuote {
+    font-size: var(--fontSize30px);
     font-weight: var(--fontWeight700);
+    color: white;
   }
   .authorQuote {
+    font-size: var(--fontSize30px);
     font-weight: var(--fontWeight700);
+    /* color: #c4beb9; */
+    color: white;
+  }
+  .iconQuote {
+    /* color: #c4beb9; */
+    color: white;
+  }
+  .quoteContainer {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.2),
+      rgba(0, 0, 0, 0.1)
+    );
+
+    /* Blur subtil pe fundal */
+    /* backdrop-filter: blur(10px); 
+  background: rgba(0, 0, 0, 0.2); */
   }
 }
