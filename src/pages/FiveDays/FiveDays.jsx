@@ -4,11 +4,11 @@ import styles from './FiveDays.module.css';
 import Navigation from '../../components/Navigation/Navigation.jsx';
 import { api } from '../../api/api.js';
 // import { dateBuilder } from "../../utils/dateBuilder.js";
-import ForecastEntry from '../../components/ForecastEntry/ForecastEntry.jsx'; // Importăm componenta ForecastEntry
+import ForecastEntry from '../../components/ForecastEntry/ForecastEntry.jsx'; 
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 
-import HourlyForecast from '../../components/HourlyForecast/HourlyForecast'; // Import
+import HourlyForecast from '../../components/HourlyForecast/HourlyForecast'; 
 
 function FiveDays({ city }) {
   const [forecast, setForecast] = useState([]);
