@@ -45,7 +45,7 @@ function Today({ city }) {
   }, [city]);
 
   useEffect(() => {
-    // Ma asigur că weather este definit și nu este gol
+    // Ma asigur ca weather este definit si nu este gol
     if (Object.keys(weather).length !== 0) {
       // setFeelsLike(Math.floor(weather.main.feels_like - 273.15) + " ℃");
       // setWind(weather.wind.speed + " m/s");
